@@ -1,0 +1,13 @@
+{
+  "name": "approuter",
+  "dependencies": {
+    "@sap/approuter": "^11.0.0"
+  },
+  "engines": {
+    "node": "^16"
+  },
+  "scripts": {
+    "build": "cd cap && ui5 build",
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  }
+}
