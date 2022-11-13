@@ -1,12 +1,15 @@
-module.exports = (srv) => {
+const axios = require('axios')
+const { data } = require('hdb/lib/protocol')
 
+module.exports = (srv) => {
     // Reply mock data for Books...
-    srv.on ('READ', 'Books', ()=>[
-      { ID:201, title:'Shopnil Ashik', author_ID:101, stock:12 },
-      { ID:251, title:'The Raven', author_ID:150, stock:333 },
-      { ID:252, title:'Eleonora', author_ID:150, stock:555 },
-      { ID:271, title:'Catweazle', author_ID:170, stock:222 },
-    ])
+    srv.on ('READ', 'Books', async()=>{
+      let res = await axios.get('https://jsonplaceholder.typicode.com/users').catch((err)=> console.log(err))
+
+      console.log('res', res.data);
+      return res.data
+  
+  })
    
     // Reply mock data for Authors...
     srv.on ('READ', 'Authors', ()=>[
