@@ -5,14 +5,14 @@
         <content />
         	<List
 		items="{/Books}"
-		headerText="Books">
+		headerText="Users">
 		<ObjectListItem
-			title="{ID}"
+			title="{id}"
 			
-			numberUnit="{CurrencyCode}">
+			numberUnit="{name}">
 			
-			<ObjectAttribute text="{title}" />
-			<ObjectAttribute text="{stock}" />
+			<ObjectAttribute text="{username}" />
+			<ObjectAttribute text="{email}" />
 		</ObjectListItem>
 	</List>
     </Page>
